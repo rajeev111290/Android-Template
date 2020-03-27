@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/recyclerErrorParent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/tryAgainImgView"
+        android:layout_width="@dimen/dim_150"
+        android:layout_height="@dimen/dim_150"
+        android:src="@drawable/icon_no_search"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/errorTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dim_8"
+        android:layout_marginRight="@dimen/dim_8"
+        android:layout_marginTop="@dimen/dim_32"
+        android:gravity="center_horizontal"
+        android:paddingLeft="@dimen/dim_8"
+        android:paddingRight="@dimen/dim_8"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/text_18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tryAgainImgView" />
+
+    <TextView
+        android:id="@+id/erroMsgTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingLeft="@dimen/dim_16"
+        android:paddingRight="@dimen/dim_16"
+        android:textColor="@color/color_666666"
+        android:textSize="@dimen/text_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/errorTxt" />
+
+    <TextView
+        android:id="@+id/retryBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dim_40"
+        android:layout_marginTop="@dimen/dim_64"
+        android:background="@color/color_666666"
+        android:drawableLeft="@drawable/retry_icon"
+        android:drawablePadding="@dimen/dim_6"
+        android:gravity="center"
+        android:paddingLeft="@dimen/dim_32"
+        android:paddingRight="@dimen/dim_32"
+        android:text="@string/RETRY"
+        android:textColor="@color/color_ffffff"
+        android:textSize="@dimen/text_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/erroMsgTxt" />
+
+
+</android.support.constraint.ConstraintLayout>

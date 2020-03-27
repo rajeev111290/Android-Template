@@ -1,0 +1,543 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--  Customize your theme here.  -->
+        <item name="colorPrimary">@color/color_ffffff</item>
+        <item name="colorPrimaryDark">@color/color_262626_nochange</item>
+        <item name="colorAccent">@color/color_262626_nochange</item>
+        <item name="popupMenuStyle">@style/MyPopupMenu</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans</item>
+    </style>
+
+    <style name="LauncherActivityTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/color_262626_nochange</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowExitAnimation">@null</item>  <!--//TODO remove-->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowBackground">@drawable/splash_screen_background</item>
+    </style>
+
+    <style name="MyPopupMenu" parent="@style/Widget.AppCompat.PopupMenu">
+        <item name="android:dropDownHorizontalOffset">-20dp</item>
+        <!--<item name="android:textColor">@color/body_small_text</item>-->
+        <!--<item name="android:textAppearanceSmall">@style/MyPopupMenuItem</item>-->
+        <item name="android:popupBackground">@color/color_ffffff_nochange</item>
+    </style>
+
+
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+    <!--</style>-->
+
+    <style name="PopUpBackgroundStyle" parent="@style/Base.Theme.AppCompat.Dialog">
+        <item name="android:background">@color/color_cc000000</item>
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+    </style>
+
+    <!--<style name="PopUpBackgroundStyle"></style>-->
+
+
+    //
+    // TEXT STYLING AS PER BRAND GUIDELINES
+    //
+    <style name="TextH1" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/h1_text</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/poppins_bold</item>
+        <item name="android:textSize">@dimen/text_h1</item>
+    </style>
+
+    <style name="TextH1Nunito" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/h1_text</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans</item>
+        <item name="android:textSize">@dimen/text_h1</item>
+    </style>
+
+    <style name="TextH1NunitoBold" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/h1_text</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_bold</item>
+        <item name="android:textSize">@dimen/text_h1</item>
+    </style>
+
+    <style name="TextH2" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/h2_text</item>
+        <item name="android:textSize">@dimen/text_h2</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_bold</item>
+    </style>
+
+    <style name="TextH2WHite" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/h2_text_white</item>
+        <item name="android:textSize">@dimen/text_h2</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean"></item>
+    </style>
+
+
+    <style name="TextH2ActionBar" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/h2_text_actionbar</item>
+        <item name="android:textSize">@dimen/text_h2</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_bold</item>
+    </style>
+
+
+    <style name="TextH7ActionBar" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/h2_text_actionbar</item>
+        <item name="android:textSize">@dimen/text_h7</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_bold</item>
+    </style>
+
+    <style name="TextH3" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/h3_text</item>
+        <item name="android:textSize">@dimen/text_h3</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_bold</item>
+    </style>
+
+    <style name="TextH3White" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/h3_text_white</item>
+        <item name="android:textSize">@dimen/text_h3</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_bold</item>
+    </style>
+
+    <style name="TextH4" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/h4_text</item>
+        <item name="android:textSize">@dimen/text_h4</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="TextH4White" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/h4_text_white</item>
+        <item name="android:textSize">@dimen/text_h4</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_bold</item>
+    </style>
+
+    <style name="TextH5" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/h5_text</item>
+        <item name="android:textSize">@dimen/text_h5</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans</item>
+    </style>
+
+    <style name="TextH5White" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/h5_text_white</item>
+        <item name="android:textSize">@dimen/text_h5</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans</item>
+    </style>
+
+    <style name="TextH5WhiteBold" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/h5_text_white</item>
+        <item name="android:textSize">@dimen/text_h5</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_bold</item>
+    </style>
+
+    <style name="TextH6" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/h6_text</item>
+        <item name="android:textSize">@dimen/text_h6</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_bold</item>
+    </style>
+
+    <style name="TextH6Grey" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/h6_text_grey</item>
+        <item name="android:textSize">@dimen/text_h6</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_bold</item>
+    </style>
+
+    <style name="TextH7" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/h7_text</item>
+        <item name="android:textSize">@dimen/text_h7</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/poppins_bold</item>
+    </style>
+
+    <style name="TextH7Grey" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/h7_text_grey</item>
+        <item name="android:textSize">@dimen/text_h7</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/poppins_bold</item>
+    </style>
+
+    <style name="TextBodyLarge" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/body_large_text</item>
+        <item name="android:textSize">@dimen/body_large_text</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans</item>
+
+    </style>
+
+    <style name="RadioButtonTextBodyLarge" parent="@android:style/Widget.CompoundButton.RadioButton">
+        <item name="android:textColor">@color/body_large_text</item>
+        <item name="android:textSize">@dimen/body_large_text</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans</item>
+    </style>
+
+    <style name="TextBodySmall" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/body_small_text</item>
+        <item name="android:textSize">@dimen/body_small_text</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans</item>
+    </style>
+
+    <style name="TextBodySmallSemiBold" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/body_small_text</item>
+        <item name="android:textSize">@dimen/body_small_text</item>
+        <item name="android:lineSpacingExtra">1.2dp</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_semibold
+        </item>
+    </style>
+
+
+    <style name="TextBodySmallSemiBoldActionBar" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/body_small_text_actionbar</item>
+        <item name="android:textSize">@dimen/body_small_text</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_semibold
+        </item>
+    </style>
+
+    <style name="TextBodySmallGrey" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/body_small_text_grey</item>
+        <item name="android:textSize">@dimen/body_small_text</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans</item>
+    </style>
+
+
+    <style name="TextBodySmallWhite" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/body_small_text_white</item>
+        <item name="android:textSize">@dimen/body_small_text</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans</item>
+    </style>
+
+    <style name="TextLinks" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/links_text</item>
+        <item name="android:textSize">@dimen/links_text</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_semibold
+        </item>
+    </style>
+
+    <style name="TextCtaGreen" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/cta_green</item>
+        <item name="android:textSize">@dimen/cta_green</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_semibold
+        </item>
+        <item name="android:paddingLeft">@dimen/dim_16</item>
+        <item name="android:paddingRight">@dimen/dim_16</item>
+        <item name="android:paddingTop">@dimen/dim_8</item>
+        <item name="android:paddingBottom">@dimen/dim_8</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="TextCtaGrey">
+        <item name="android:textColor">@color/cta_grey</item>
+        <item name="android:textSize">@dimen/cta_grey</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_semibold
+        </item>
+        <item name="android:paddingLeft">@dimen/dim_16</item>
+        <item name="android:paddingRight">@dimen/dim_16</item>
+        <item name="android:paddingTop">@dimen/dim_8</item>
+        <item name="android:paddingBottom">@dimen/dim_8</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="TextCtaWhiteSmall" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/cta_white</item>
+        <item name="android:textSize">@dimen/cta_white_small</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_semibold
+        </item>
+        <item name="android:paddingLeft">@dimen/dim_16</item>
+        <item name="android:paddingRight">@dimen/dim_16</item>
+        <item name="android:paddingTop">@dimen/dim_8</item>
+        <item name="android:paddingBottom">@dimen/dim_8</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!--<style name="TextCtaWhite" parent="TextAppearance.AppCompat">-->
+    <!--<item name="android:textColor">@color/cta_white</item>-->
+    <!--<item name="android:textSize">@dimen/cta_white</item>-->
+    <!--<item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_semibold</item>-->
+    <!--</style>-->
+
+    <style name="TextUserName" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/user_name</item>
+        <item name="android:textSize">@dimen/user_name</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_bold</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+
+    </style>
+
+    <style name="TextUserNameComments" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/user_name_comment</item>
+        <item name="android:textSize">@dimen/user_name_comment</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_semibold
+        </item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="TextNavBar" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/nav_bar_text</item>
+        <item name="android:textSize">@dimen/nav_bar_text</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_semibold
+        </item>
+    </style>
+
+    <style name="TextCommentFeed" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/text_comment_feed</item>
+        <item name="android:textSize">@dimen/feed_comment</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans</item>
+    </style>
+
+    <style name="TextComment" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/text_comment</item>
+        <item name="android:textSize">@dimen/comment_text</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans</item>
+    </style>
+
+    //
+    // Button styles as per branding
+    //
+
+    <style name="GreenButtonSolidRounded" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/cta_white</item>
+        <item name="android:textSize">@dimen/btn_text_size</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_semibold
+        </item>
+        <item name="android:background">@drawable/green_solid_rounded_border</item>
+        <item name="android:paddingLeft">@dimen/dim_16</item>
+        <item name="android:paddingRight">@dimen/dim_16</item>
+        <item name="android:paddingTop">@dimen/dim_8</item>
+        <item name="android:paddingBottom">@dimen/dim_8</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="GreenButtonSolid">
+        <item name="android:textColor">@color/cta_white</item>
+        <item name="android:textSize">@dimen/btn_text_size</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_bold
+        </item>
+        <item name="android:background">@color/gradeup_green</item>
+        <item name="android:paddingLeft">@dimen/dim_16</item>
+        <item name="android:paddingRight">@dimen/dim_16</item>
+        <item name="android:paddingTop">@dimen/dim_8</item>
+        <item name="android:paddingBottom">@dimen/dim_8</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+
+    <style name="BlueButtonSolid">
+        <item name="android:textColor">@color/cta_white</item>
+        <item name="android:textSize">@dimen/btn_text_size</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_semibold
+        </item>
+        <item name="android:background">@color/gradeup_blue</item>
+        <item name="android:paddingLeft">@dimen/dim_16</item>
+        <item name="android:paddingRight">@dimen/dim_16</item>
+        <item name="android:paddingTop">@dimen/dim_8</item>
+        <item name="android:paddingBottom">@dimen/dim_8</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+
+    <style name="GreenButtonStrokeRounded" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/gradeup_green</item>
+        <item name="android:textSize">@dimen/btn_text_size</item>
+        <item name="android:background">@drawable/green_round_border_transparent</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_semibold
+        </item>
+        <item name="android:paddingLeft">@dimen/dim_16</item>
+        <item name="android:paddingRight">@dimen/dim_16</item>
+        <item name="android:paddingTop">@dimen/dim_8</item>
+        <item name="android:paddingBottom">@dimen/dim_8</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="GreenButtonStroke" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/gradeup_green</item>
+        <item name="android:textSize">@dimen/btn_text_size</item>
+        <item name="android:background">@drawable/green_square_border_transparent</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_semibold
+        </item>
+        <item name="android:paddingLeft">@dimen/dim_16</item>
+        <item name="android:paddingRight">@dimen/dim_16</item>
+        <item name="android:paddingTop">@dimen/dim_8</item>
+        <item name="android:paddingBottom">@dimen/dim_8</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+
+    <style name="WhiteButtonRoundedSolid" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/gradeup_green</item>
+        <item name="android:textSize">@dimen/btn_text_size</item>
+        <!--<item name="android:background">@drawable/white_rounded_corner</item>-->
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_semibold
+        </item>
+        <item name="android:paddingLeft">@dimen/dim_16</item>
+        <item name="android:paddingRight">@dimen/dim_16</item>
+        <item name="android:paddingTop">@dimen/dim_8</item>
+        <item name="android:paddingBottom">@dimen/dim_8</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="WhiteButtonStrokeRounded" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/cta_white</item>
+        <item name="android:textSize">@dimen/btn_text_size</item>
+        <!--<item name="android:background">@drawable/white_rounded_transparent_background_corner</item>-->
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_semibold
+        </item>
+        <item name="android:paddingLeft">@dimen/dim_16</item>
+        <item name="android:paddingRight">@dimen/dim_16</item>
+        <item name="android:paddingTop">@dimen/dim_8</item>
+        <item name="android:paddingBottom">@dimen/dim_8</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+
+    <style name="YelloButtonRoundedSolid" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/cta_white</item>
+        <item name="android:textSize">@dimen/btn_text_size</item>
+        <!--<item name="android:background">@drawable/yellow_solid_rounded_border</item>-->
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_semibold
+        </item>
+        <item name="android:paddingLeft">@dimen/dim_16</item>
+        <item name="android:paddingRight">@dimen/dim_16</item>
+        <item name="android:paddingTop">@dimen/dim_8</item>
+        <item name="android:paddingBottom">@dimen/dim_8</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="GreyButtonSolid" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/cta_white</item>
+        <item name="android:textSize">@dimen/btn_text_size</item>
+        <item name="android:background">@color/color_b3b3b3</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_semibold
+        </item>
+        <item name="android:paddingLeft">@dimen/dim_16</item>
+        <item name="android:paddingRight">@dimen/dim_16</item>
+        <item name="android:paddingTop">@dimen/dim_8</item>
+        <item name="android:paddingBottom">@dimen/dim_8</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="GreyButtonRoundedSolid" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/cta_white</item>
+        <item name="android:textSize">@dimen/btn_text_size</item>
+        <!--<item name="android:background">@drawable/rounded_rectangle_gray</item>-->
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_semibold
+        </item>
+        <item name="android:paddingLeft">@dimen/dim_16</item>
+        <item name="android:paddingRight">@dimen/dim_16</item>
+        <item name="android:paddingTop">@dimen/dim_8</item>
+        <item name="android:paddingBottom">@dimen/dim_8</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="GreyButtonRoundedStroke" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/cta_grey</item>
+        <item name="android:textSize">@dimen/btn_text_size</item>
+        <!--<item name="android:background">@drawable/grey_stroke_rounded_bg</item>-->
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/nunito_sans_semibold
+        </item>
+        <item name="android:paddingLeft">@dimen/dim_16</item>
+        <item name="android:paddingRight">@dimen/dim_16</item>
+        <item name="android:paddingTop">@dimen/dim_8</item>
+        <item name="android:paddingBottom">@dimen/dim_8</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    //
+    // Misc. View Style
+    //
+
+    <style name="DividerGrey">
+        <item name="android:background">@color/divider_grey</item>
+    </style>
+
+    <style name="DividerGreen">
+        <item name="android:background">@color/color_45b97c</item>
+    </style>
+
+    <style name="EditTextWhite">
+        <!--<item name="android:background">@drawable/bottom_white_line_edit_text_background</item>-->
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:textColor">@color/color_ffffff_nochange</item>
+        <item name="android:textSize">@dimen/body_small_text</item>
+    </style>
+
+    <style name="EditTextGreyBox">
+        <!--<item name="android:background">@drawable/gray_border</item>-->
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:textColor">@color/color_ffffff_nochange</item>
+        <item name="android:textColorHint">@color/color_b3b3b3</item>
+        <item name="android:textSize">@dimen/body_small_text</item>
+    </style>
+
+    <style name="EditTextTransparent">
+        <item name="android:background">@null</item>
+        <item name="android:textColor">@color/color_333333</item>
+        <item name="android:textSize">@dimen/body_small_text</item>
+        <item name="android:textColorHint">@color/color_999999</item>
+    </style>
+
+    <style name="Clickable">
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="CardViewStyleWhite" parent="CardView">
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="cardBackgroundColor">@color/color_ffffff_nochange</item>
+        <item name="cardCornerRadius">@dimen/dim_4</item>
+        <item name="contentPadding">@dimen/dim_12</item>
+        <item name="android:layout_margin">@dimen/dim_12</item>
+    </style>
+
+    <style name="spinner_style">
+        <!--<item name="android:background">@drawable/spinner_bg</item>-->
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+
+</resources>

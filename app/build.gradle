@@ -1,0 +1,84 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.roundlers.mytemplate"
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //Testing Libraries
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //Support Libraries
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportlibrary"
+    implementation "com.android.support:support-v4:$rootProject.ext.supportlibrary"
+    implementation "com.android.support:design:$rootProject.ext.supportlibrary"
+    implementation "com.android.support.constraint:constraint-layout:$rootProject.ext.constaintlayout"
+
+    //Dagger Dependencies
+    implementation "com.google.dagger:dagger-android:$rootProject.ext.dagger"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$rootProject.ext.dagger"
+    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.ext.dagger"
+
+    // RxJava
+    implementation group: 'io.reactivex.rxjava2', name: 'rxandroid', version: "$rootProject.ext.rxandroid"
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjava"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxandroid"
+    implementation("com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.retrofit") {
+        exclude group: 'com.squareup.okhttp3'
+    }
+
+    // Network Library
+    implementation("com.squareup.retrofit2:retrofit:$rootProject.ext.retrofit") {
+        exclude group: 'com.squareup.okhttp3'
+    }
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.okhttp"
+    implementation "com.squareup.okhttp3:okhttp:$rootProject.ext.okhttp"
+    implementation("com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofit") {
+        exclude group: 'com.squareup.okhttp3'
+        exclude group: 'com.squareup.okhttp3:okhttp-ws'
+    }
+
+    //Eventbus
+    implementation "org.greenrobot:eventbus:$rootProject.ext.eventbus"
+
+    // Image Loading
+    implementation "com.github.bumptech.glide:glide:$rootProject.ext.glide"
+
+    // Crash Reporting
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.1@aar') { transitive = true }
+
+    //Google Api Dependencies
+    implementation "com.google.code.gson:gson:$rootProject.ext.gson"
+    implementation 'com.android.support:multidex:1.0.3'
+
+    //Android Architecture Component
+    implementation 'android.arch.persistence.room:rxjava2:1.1.1'
+    implementation 'android.arch.persistence.room:runtime:1.1.1'
+    implementation 'android.arch.lifecycle:common-java8:1.1.1'
+    implementation 'android.arch.lifecycle:reactivestreams:1.1.1'
+    implementation 'com.android.support:support-v4:28.0.0'
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+}
+

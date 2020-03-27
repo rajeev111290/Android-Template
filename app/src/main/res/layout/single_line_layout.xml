@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_ffffff">
+
+    <View
+        android:id="@+id/top_divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_5"
+        android:background="@color/color_f2f2f2"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/dividerTopSmall"
+        style="@style/DividerGrey"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_4"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/top_divider" />
+
+    <TextView
+        android:id="@+id/text_view"
+        style="@style/TextH7Grey"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dim_4"
+        android:layout_marginEnd="@dimen/dim_16"
+        android:layout_marginLeft="@dimen/dim_16"
+        android:layout_marginRight="@dimen/dim_16"
+        android:layout_marginStart="@dimen/dim_16"
+        android:layout_marginTop="@dimen/dim_8"
+        android:gravity="center"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dividerTopSmall" />
+
+    <View
+        android:id="@+id/bottom_divider"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dim_0_5"
+        android:background="@color/color_f2f2f2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <View
+        android:id="@+id/bottomDividerBig"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dim_1"
+        android:background="@color/color_f2f2f2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

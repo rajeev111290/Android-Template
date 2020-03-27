@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">MyTemplate</string>
+
+    <string name="Failed_to_download_all_images_Make_sure_your_internet_is_working">Failed to download all images. Make sure your internet is working.</string>
+    <string name="Could_not_connect_to_server">Couldn\'t connect to server</string>
+    <string name="Please_try_again_after_some_time">Please try again after sometime</string>
+    <string name="Nothing_to_show">Nothing to show</string>
+    <string name="No_Internet_Connection">No internet connection</string>
+    <string name="check_network_settings"><![CDATA[Check your network settings & try again]]></string>
+    <string name="please_connect_to_internet">Please connect to the internet</string>
+
+
+    <string name="read_more">Read more...</string>
+    <string name="RETRY">RETRY</string>
+
+</resources>
