@@ -10,17 +10,17 @@ public class Zeus extends Exception {
 
 
     /**
-     *  old error handle check
+     * old error handle check
      */
     private int errorCode;
     /**
-     *  for handling error code of new API endpoints.
+     * for handling error code of new API endpoints.
      */
     private String newCode;
 
 
     /**
-     *  Addition data if any with the error
+     * Addition data if any with the error
      */
     private JsonObject payload;
 
@@ -37,36 +37,36 @@ public class Zeus extends Exception {
         return errorCode;
     }
 
-    public String getNewCode() {
-        return newCode;
-    }
-
     public void setErrorCode(int errorCode) {
         this.errorCode = errorCode;
+    }
+
+    public String getNewCode() {
+        return newCode;
     }
 
     public void setNewCode(String newCode) {
         this.newCode = newCode;
     }
 
-    public void setPayload(JsonObject payload) {
-        this.payload = payload;
-    }
-
     public JsonObject getPayload() {
         return payload;
     }
 
-    public static class Builder{
+    public void setPayload(JsonObject payload) {
+        this.payload = payload;
+    }
+
+    public static class Builder {
 
         private int errorCode;
         private String newCode;
         private JsonObject payload;
         private String message;
 
-        public Builder(String message){
-            this.message=message;
-            errorCode=-777;
+        public Builder(String message) {
+            this.message = message;
+            errorCode = -777;
         }
 
         public Builder setErrorCode(int errorCode) {
@@ -84,16 +84,15 @@ public class Zeus extends Exception {
             return this;
         }
 
-        public Zeus build(){
+        public Zeus build() {
 
-            Zeus errorObject=new Zeus(message);
+            Zeus errorObject = new Zeus(message);
             errorObject.setNewCode(newCode);
             errorObject.setErrorCode(errorCode);
             errorObject.setPayload(payload);
             return errorObject;
         }
     }
-
 
 
 }

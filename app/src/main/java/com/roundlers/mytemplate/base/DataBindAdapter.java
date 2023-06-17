@@ -2,9 +2,10 @@ package com.roundlers.mytemplate.base;
 
 import android.app.Activity;
 import android.os.Handler;
-import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.ViewGroup;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.roundlers.mytemplate.constants.Constants;
 import com.roundlers.mytemplate.models.RecyclerSectionHeaderModel;
@@ -23,8 +24,10 @@ import io.reactivex.disposables.CompositeDisposable;
  */
 public class DataBindAdapter<M extends BaseModel> extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public Activity activity;
+    public List<M> data;
     protected CompositeDisposable compositeDisposable;
     protected SparseArray<DataBinder> binders;
+    int maxFixedCardPosition = 0;
     private int
             headerIndex = Constants.HEADERS_START_INDEX,
             footerIndex = Constants.FOOTERS_START_INDEX,
@@ -32,8 +35,32 @@ public class DataBindAdapter<M extends BaseModel> extends RecyclerView.Adapter<R
     private int upLoaderIndex = -1, downLoaderIndex;
     private String LOADER_BINDER_CLASS = "LoaderBinder";
     private boolean containsFixedPositionCards;
-    public List<M> data;
     private RecyclerSectionHeaderModel selectedGenericSectionHeaderModel;
+    /**
+     * Call this for data list binders.
+     *
+     * @param type
+     * @param binder
+     * @param <D>
+     */
+    private HashMap<Integer, Integer> supportedType = new HashMap<>();
+    /**
+     * Call this for data list binders.
+     *
+     * @param type
+     * @param binder
+     * @param <D>
+     */
+    private HashMap<Integer, Integer> fixedPositionType = new HashMap<>();
+
+    public DataBindAdapter(Activity activity, List<M> data) {
+        this.activity = activity;
+        this.data = data;
+        compositeDisposable = new CompositeDisposable();
+        binders = new SparseArray<>();
+        addBinder(Constants.ModelType.GENERIC_CARD_DIVIDER, new GenericCardDividerBinder(this));
+        addBinder(-18233434, new EmptyDataBinder(this));
+    }
 
     public M getDataForPosition(int position) {
         int index = position - headersCount - getFixedCardsCountForPosition(position);
@@ -99,7 +126,6 @@ public class DataBindAdapter<M extends BaseModel> extends RecyclerView.Adapter<R
             notifyItemChanged(index);
     }
 
-
     public int getFootersCount() {
         return footersCount;
     }
@@ -125,7 +151,6 @@ public class DataBindAdapter<M extends BaseModel> extends RecyclerView.Adapter<R
         return position;
     }
 
-
     /**
      * All binders at positions below data list are considered as footers
      *
@@ -144,36 +169,9 @@ public class DataBindAdapter<M extends BaseModel> extends RecyclerView.Adapter<R
         return getItemCount() - 1;
     }
 
-    /**
-     * Call this for data list binders.
-     *
-     * @param type
-     * @param binder
-     * @param <D>
-     */
-    private HashMap<Integer, Integer> supportedType = new HashMap<>();
-
-    /**
-     * Call this for data list binders.
-     *
-     * @param type
-     * @param binder
-     * @param <D>
-     */
-    private HashMap<Integer, Integer> fixedPositionType = new HashMap<>();
-
     protected <D extends DataBinder> void addBinder(int type, D binder) {
         binders.put(type, binder);
         supportedType.put(type, type);
-    }
-
-    public DataBindAdapter(Activity activity, List<M> data) {
-        this.activity = activity;
-        this.data = data;
-        compositeDisposable = new CompositeDisposable();
-        binders = new SparseArray<>();
-        addBinder(Constants.ModelType.GENERIC_CARD_DIVIDER, new GenericCardDividerBinder(this));
-        addBinder(-18233434, new EmptyDataBinder(this));
     }
 
     @Override
@@ -194,9 +192,6 @@ public class DataBindAdapter<M extends BaseModel> extends RecyclerView.Adapter<R
         int size = data == null ? 0 : data.size();
         return headersCount + size + footersCount + fixedPositionCardsCount;
     }
-
-
-    int maxFixedCardPosition = 0;
 
     protected <D extends DataBinder> void addFixedPositionCards(int position, int type, D binder) {
         containsFixedPositionCards = true;

@@ -10,7 +10,9 @@ public class Logger {
 
     private static final String LOG_TAG = BuildConstants.APP_NAME;
 
-    /** @see <a href="http://stackoverflow.com/a/8899735" /> */
+    /**
+     * @see <a href="http://stackoverflow.com/a/8899735" />
+     */
     private static final int ENTRY_MAX_LEN = 4000;
 
     /**
@@ -46,9 +48,9 @@ public class Logger {
 
     private static void log(int priority, boolean ignoreLimit, String message, Object... args) {
         String print;
-        if (args != null && args.length > 0 && args[args.length-1] instanceof Throwable) {
-            Object[] truncated = Arrays.copyOf(args, args.length -1);
-            Throwable ex = (Throwable) args[args.length-1];
+        if (args != null && args.length > 0 && args[args.length - 1] instanceof Throwable) {
+            Object[] truncated = Arrays.copyOf(args, args.length - 1);
+            Throwable ex = (Throwable) args[args.length - 1];
             print = formatMessage(message, truncated) + '\n' + Log.getStackTraceString(ex);
         } else {
             print = formatMessage(message, args);
@@ -61,7 +63,7 @@ public class Logger {
                 Log.println(priority, LOG_TAG, next);
                 if (lastNewLine != -1) {
                     // Don't print out the \n twice.
-                    print = print.substring(nextEnd+1);
+                    print = print.substring(nextEnd + 1);
                 } else {
                     print = print.substring(nextEnd);
                 }

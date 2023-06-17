@@ -13,6 +13,10 @@ public class Constants {
     public static final int OPERATION_FAILED = 4;
 
 
+    public interface ModelType {
+        int USER = 1;
+        int GENERIC_CARD_DIVIDER = 2;
+    }
 
     public static class Direction {
         public static final int UP = 0;
@@ -30,10 +34,5 @@ public class Constants {
                     return BEFORE;
             }
         }
-    }
-
-    public interface ModelType {
-        int USER = 1;
-        int GENERIC_CARD_DIVIDER = 2;
     }
 }

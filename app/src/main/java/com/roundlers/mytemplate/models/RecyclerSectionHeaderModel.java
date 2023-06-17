@@ -11,8 +11,10 @@ import java.util.ArrayList;
  * Created by sanjeevkumar on 04/12/18.
  */
 
-public interface RecyclerSectionHeaderModel<M extends BaseModel> extends BaseModel, Parcelable{
+public interface RecyclerSectionHeaderModel<M extends BaseModel> extends BaseModel, Parcelable {
     public ArrayList<M> getSectionalData();
+
     public boolean isSelected();
+
     public void setSelected(boolean selected);
 }

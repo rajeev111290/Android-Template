@@ -7,11 +7,19 @@ import java.util.List;
  */
 
 public class ImageDownloadComplete {
-    private boolean successful;
     private final List d;
     private final int direction;
     private final boolean notifyAll;
+    private boolean successful;
     private int scrollToIndex;
+
+    public ImageDownloadComplete(boolean c, List d, int direction, boolean notifyAll, int scrollToIndex) {
+        successful = c;
+        this.d = d;
+        this.direction = direction;
+        this.notifyAll = notifyAll;
+        this.scrollToIndex = scrollToIndex;
+    }
 
     public List getD() {
         return d;
@@ -27,14 +35,6 @@ public class ImageDownloadComplete {
 
     public int getScrollToIndex() {
         return scrollToIndex;
-    }
-
-    public ImageDownloadComplete(boolean c, List d, int direction, boolean notifyAll, int scrollToIndex) {
-        successful = c;
-        this.d = d;
-        this.direction = direction;
-        this.notifyAll = notifyAll;
-        this.scrollToIndex = scrollToIndex;
     }
 
     public boolean isSuccessful() {

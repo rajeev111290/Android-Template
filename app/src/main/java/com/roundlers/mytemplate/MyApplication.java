@@ -4,21 +4,28 @@ import android.app.Application;
 import android.graphics.Typeface;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.support.v4.provider.FontRequest;
-import android.support.v4.provider.FontsContractCompat;
+
+import androidx.core.provider.FontRequest;
+import androidx.core.provider.FontsContractCompat;
 
 import com.roundlers.mytemplate.di.base.component.ApplicationComponent;
 import com.roundlers.mytemplate.di.base.component.DaggerApplicationComponent;
 import com.roundlers.mytemplate.di.base.module.ApplicationModule;
 
 public class MyApplication extends Application {
-    ApplicationComponent component;
+    public static Typeface nunitoSans, nunitoSansBold, nunitoSansSemiBold, poppinsBold;
     private static MyApplication appInstance;
+    ApplicationComponent component;
+    private Handler mHandler;
+
+    public static MyApplication getInstance() {
+        return appInstance;
+    }
 
     @Override
     public void onCreate() {
         super.onCreate();
-        appInstance=this;
+        appInstance = this;
         intializeDagger();
 
     }
@@ -32,16 +39,6 @@ public class MyApplication extends Application {
     public ApplicationComponent getApplicationComponent() {
         return component;
     }
-
-    public static MyApplication getInstance() {
-        return appInstance;
-    }
-
-
-
-    private Handler mHandler;
-    public static Typeface nunitoSans, nunitoSansBold, nunitoSansSemiBold, poppinsBold;
-
 
     private void fetchFontsTypeFace(String font) {
         FontRequest request = new FontRequest("com.google.android.gms.fonts",

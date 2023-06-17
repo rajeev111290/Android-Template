@@ -19,7 +19,9 @@ public interface ApplicationComponent {
 
     // list of places from where you have to initialize/build this component
     void inject(MyApplication myApplication);
+
     void inject(BaseActivity baseActivity);
+
     void inject(BaseFragment baseFragment);
 
 

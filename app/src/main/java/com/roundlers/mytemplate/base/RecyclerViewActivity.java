@@ -1,15 +1,21 @@
 package com.roundlers.mytemplate.base;
 
+import static com.roundlers.mytemplate.models.exceptions.ErrorConstants.NO_DATA;
+import static com.roundlers.mytemplate.models.exceptions.ErrorConstants.NO_INTERNET;
+import static com.roundlers.mytemplate.models.exceptions.ErrorConstants.OPERATION_FAILED;
+import static com.roundlers.mytemplate.models.exceptions.ErrorConstants.SERVER_ERROR;
+
 import android.accounts.NetworkErrorException;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.roundlers.mytemplate.R;
@@ -27,24 +33,19 @@ import java.util.List;
 
 import io.reactivex.subjects.PublishSubject;
 
-import static com.roundlers.mytemplate.models.exceptions.ErrorConstants.NO_DATA;
-import static com.roundlers.mytemplate.models.exceptions.ErrorConstants.NO_INTERNET;
-import static com.roundlers.mytemplate.models.exceptions.ErrorConstants.OPERATION_FAILED;
-import static com.roundlers.mytemplate.models.exceptions.ErrorConstants.SERVER_ERROR;
-
 /**
  * Created by abhayalekal on 30/11/17.
  */
 public abstract class RecyclerViewActivity<T, A extends DataBindAdapter> extends BaseActivity {
     public List<T> data;
-    T highlightObject;
     public RecyclerView recyclerView;
     protected LinearLayoutManager layoutManager;
     protected A adapter;
-    private boolean requestInProgressUP, requestInProgressDOWN, noMoreDataUP, noMoreDataDOWN;
+    T highlightObject;
     ProgressBar progressBar;
     View errorLayout;
     TextView retryBtn;
+    private boolean requestInProgressUP, requestInProgressDOWN, noMoreDataUP, noMoreDataDOWN;
 
     protected abstract A getAdapter();
 

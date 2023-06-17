@@ -7,6 +7,7 @@ import com.roundlers.mytemplate.base.DataBindAdapter;
 import com.roundlers.mytemplate.base.DataBinder;
 
 import java.util.List;
+
 import io.reactivex.subjects.PublishSubject;
 
 /**
@@ -16,14 +17,13 @@ import io.reactivex.subjects.PublishSubject;
 public abstract class HighlightBinder<H, T extends ViewHolderWithParent> extends DataBinder<T> {
 
     private H highlightObject;
-
-    abstract void bindHolder(T holder, int position);
-
     private PublishSubject<Boolean> animationCompletePublisher;
 
     HighlightBinder(DataBindAdapter dataBindAdapter) {
         super(dataBindAdapter);
     }
+
+    abstract void bindHolder(T holder, int position);
 
     @Override
     public void bindViewHolder(T holder, int position, List<Object> payloads) {
@@ -48,7 +48,7 @@ public abstract class HighlightBinder<H, T extends ViewHolderWithParent> extends
 /*        if (position % 2 == 0)
             holder.parent.setBackgroundColor(activity.getResources().getColor(co.gradeup.android.R.color.color_45b97c));
         else*/
-            holder.parent.setBackgroundColor(activity.getResources().getColor(R.color.color_ffffff_feed_card));
+        holder.parent.setBackgroundColor(activity.getResources().getColor(R.color.color_ffffff_feed_card));
     }
 
     private void reset(View parent) {

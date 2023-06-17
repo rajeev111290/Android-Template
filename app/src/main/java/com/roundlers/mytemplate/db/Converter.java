@@ -1,6 +1,7 @@
 package com.roundlers.mytemplate.db;
 
-import android.arch.persistence.room.TypeConverter;
+
+import androidx.room.TypeConverter;
 
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;

@@ -3,11 +3,12 @@ package com.roundlers.mytemplate.base;
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.AppCompatDelegate;
 import android.view.Window;
 import android.view.WindowManager;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.roundlers.mytemplate.MyApplication;
 import com.roundlers.mytemplate.R;
@@ -25,7 +26,9 @@ public abstract class BaseActivity extends AppCompatActivity {
 //  protected CompositeDisposable compositeDisposable;
 
     protected abstract void setViews();
+
     protected abstract void setActionBar();
+
     protected abstract void injectActivity(UserComponent userComponent);
 
     @Override

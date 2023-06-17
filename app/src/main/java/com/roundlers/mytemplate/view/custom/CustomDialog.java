@@ -188,9 +188,7 @@ public class CustomDialog extends Dialog {
                 }
                 if (customDialogBuilder.dismissByDefault) {
                     CustomDialog.this.dismiss();
-                }
-                else
-                {
+                } else {
                     parent.setVisibility(View.GONE);
                 }
             }
@@ -252,6 +250,13 @@ public class CustomDialog extends Dialog {
 
             }
         });
+    }
+
+    public String getSelectedLanguage() {
+        int radioId = radioGroup.getCheckedRadioButtonId();
+        RadioButton rb = radioGroup.findViewById(radioId);
+        return rb.getText().toString();
+
     }
 
     //Builder Class
@@ -393,13 +398,6 @@ public class CustomDialog extends Dialog {
             this.dismissByDefault = dismissByDefault;
             return this;
         }
-    }
-
-    public String getSelectedLanguage() {
-        int radioId = radioGroup.getCheckedRadioButtonId();
-        RadioButton rb = radioGroup.findViewById(radioId);
-        return rb.getText().toString();
-
     }
 
 

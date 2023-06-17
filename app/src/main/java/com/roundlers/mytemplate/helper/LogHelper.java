@@ -17,13 +17,13 @@ public class LogHelper {
     public static void log(String key, String value) {
         if (BuildConstants.DEBUG) {
             Logger.debugEntire(
-                    BuildConstants.APP_NAME +":-->  "+ key +" : "+ value);
+                    BuildConstants.APP_NAME + ":-->  " + key + " : " + value);
         }
     }
 
     public static void log2(String key, String value) {
         if (BuildConstants.DEBUG) {
-            Logger.e(BuildConstants.APP_NAME +":-->  "+ key, value);
+            Logger.e(BuildConstants.APP_NAME + ":-->  " + key, value);
         }
     }
 

@@ -53,6 +53,11 @@ public class SuperActionBar extends RelativeLayout {
         init();
     }
 
+    public SuperActionBar(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init();
+    }
+
     public TextView getTitleTextView() {
         return titleTextView;
     }
@@ -76,11 +81,6 @@ public class SuperActionBar extends RelativeLayout {
         });
         invalidate();
         requestLayout();
-    }
-
-    public SuperActionBar(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init();
     }
 
     public SuperActionBar setTouchListener(TouchListener touchListener) {
@@ -125,10 +125,10 @@ public class SuperActionBar extends RelativeLayout {
             //TODO : ripple
 //            AppHelper.setBackground(leftMostIconView, R.drawable.btn_ripple_drawable, getContext(), R.drawable.alternate_card);
             visibleViews.add(leftMostIconView);
-            if(titleView!=null) {
+            if (titleView != null) {
                 titleView.setPadding(0, 0, 0, 0);
-            }else{
-                setTextPaddingZero=true;
+            } else {
+                setTextPaddingZero = true;
             }
 
 
@@ -195,7 +195,7 @@ public class SuperActionBar extends RelativeLayout {
 
             }
             params.rightMargin = (visibleViews.contains(rightMostIconView) ? RM_DIM : 0) + (visibleViews.contains(penultimateRightMostIconView) ? PEN_RM_DIM : 0);
-            int endPaddingInPixels = (setTextPaddingZero)?0:AppHelper.pxFromDp(getContext(), endPaddingInDP);
+            int endPaddingInPixels = (setTextPaddingZero) ? 0 : AppHelper.pxFromDp(getContext(), endPaddingInDP);
             titleView.setPadding(endPaddingInPixels, 0, 0, 0);
 
 
@@ -498,7 +498,7 @@ public class SuperActionBar extends RelativeLayout {
                     {
                         if (drawable == R.drawable.icon_search || drawable == R.drawable.icon_grey_search) {
 //                            FirebaseAnalyticsHelper.sendEvent(getContext(), "Tap Search Box", new HashMap<>());
-                            LogHelper.showBottomToast(getContext(),"Tap Search Box");
+                            LogHelper.showBottomToast(getContext(), "Tap Search Box");
 //                            getContext().startActivity(SearchActivity.getLaunchIntent(getContext(), "", null, null, "", true));
                         } else {
                             touchListener.onPenultimateRightMostIconClicked();
@@ -565,7 +565,7 @@ public class SuperActionBar extends RelativeLayout {
                 if (touchListener != null) {
                     if (drawable == R.drawable.icon_search || drawable == R.drawable.icon_grey_search) {
 //                        FirebaseAnalyticsHelper.sendEvent(getContext(), "Tap Search Box", new HashMap<>());
-                        LogHelper.showBottomToast(getContext(),"Tap Search Box");
+                        LogHelper.showBottomToast(getContext(), "Tap Search Box");
 //                        getContext().startActivity(SearchActivity.getLaunchIntent(getContext(), "", null, null, "", true));
                     } else {
                         touchListener.onRightMostIconClicked();

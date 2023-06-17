@@ -107,7 +107,6 @@ public class AppHelper {
     }
 
 
-
     public static boolean isConnected(Context context) {
         if (context == null) {
             return false;

@@ -1,9 +1,10 @@
 package com.roundlers.mytemplate.models;
 
-import android.arch.persistence.room.Entity;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
 
 import com.google.gson.annotations.SerializedName;
 import com.roundlers.mytemplate.base.BaseModel;
@@ -11,14 +12,31 @@ import com.roundlers.mytemplate.constants.Constants;
 
 @Entity(primaryKeys = {"userId"})
 public class User implements Parcelable, Comparable, BaseModel {
-    private String userName;
+    public static final Creator<User> CREATOR = new Creator<User>() {
+        @Override
+        public User createFromParcel(Parcel in) {
+            return new User(in);
+        }
 
+        @Override
+        public User[] newArray(int size) {
+            return new User[size];
+        }
+    };
+    private String userName;
     @NonNull
     @SerializedName("userid")
     private String userId;
-
     private String emailId;
     private int verficationCode;
+
+    private User(Parcel in) {
+        userId = in.readString();
+    }
+
+    public User() {
+
+    }
 
     public String getUserName() {
         return userName;
@@ -82,28 +100,8 @@ public class User implements Parcelable, Comparable, BaseModel {
         return false;
     }
 
-    public static final Creator<User> CREATOR = new Creator<User>() {
-        @Override
-        public User createFromParcel(Parcel in) {
-            return new User(in);
-        }
-
-        @Override
-        public User[] newArray(int size) {
-            return new User[size];
-        }
-    };
-
     @Override
     public void writeToParcel(Parcel dest, int ii) {
         dest.writeString(userId);
-    }
-
-    private User(Parcel in) {
-        userId = in.readString();
-    }
-
-    public User() {
-
     }
 }

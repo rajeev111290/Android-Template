@@ -30,12 +30,13 @@ import io.reactivex.subjects.PublishSubject;
 public class DownloadImagesHelper {
 
     private final ExecutorService executorService;
+    public boolean downloadFinishedCalled;
     private Context context;
     private HashMap<String, ImageMeta> imageMetaMap;
     private float density;
     private int imagesToBeDownloaded;
     private PublishSubject<Integer> downloadedImagesPublishSubject;
-//    private DownloadImagesDialog downloadImagesDialog;
+    //    private DownloadImagesDialog downloadImagesDialog;
     private List d;
     private int direction;
     private boolean notifyAll;
@@ -44,11 +45,6 @@ public class DownloadImagesHelper {
     private int errorCount, currentDownloadNumerator;
     private Map<String, ImageMeta> downloadingImagesFromMap;
     private PublishSubject<Boolean> isImageDownloaded;
-    public boolean downloadFinishedCalled;
-
-    public HashMap<String, ImageMeta> getImageMetaMap() {
-        return imageMetaMap;
-    }
 
     @Inject
     public DownloadImagesHelper(Activity context) {
@@ -59,6 +55,10 @@ public class DownloadImagesHelper {
         downloadFinishedCalled = false;
         density = context.getResources().getDisplayMetrics().density;
         executorService = Executors.newFixedThreadPool(5);
+    }
+
+    public HashMap<String, ImageMeta> getImageMetaMap() {
+        return imageMetaMap;
     }
 
     private void downloadImages(Map<String, ImageMeta> map) {
@@ -245,6 +245,12 @@ public class DownloadImagesHelper {
 //        }
 //    }
 
+    public void onNetworkChanged() {
+        if (downloadingImagesFromMap != null && downloadingImagesFromMap.size() > 0 && errorCount > 0) {
+            downloadImages(downloadingImagesFromMap);
+        }
+    }
+
     private class DownloadImageRunnable implements Runnable {
         private Map.Entry<String, ImageMeta> entry;
         private int index;
@@ -293,12 +299,6 @@ public class DownloadImagesHelper {
                         downloadFinished();
                 }
             }
-        }
-    }
-
-    public void onNetworkChanged() {
-        if (downloadingImagesFromMap != null && downloadingImagesFromMap.size() > 0 && errorCount > 0) {
-            downloadImages(downloadingImagesFromMap);
         }
     }
 }

@@ -31,12 +31,6 @@ public class ApplicationModule {
 
     @Provides
     @Singleton
-    Context provideApplicationContext() {
-        return application;
-    }
-
-    @Provides
-    @Singleton
     public static OkHttpClient getClient(final Context context) {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         builder.addInterceptor(getRequestInterceptor(context));
@@ -80,6 +74,12 @@ public class ApplicationModule {
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();
+    }
+
+    @Provides
+    @Singleton
+    Context provideApplicationContext() {
+        return application;
     }
 
 //    @Provides

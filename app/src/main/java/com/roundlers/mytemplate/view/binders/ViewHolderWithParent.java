@@ -1,7 +1,8 @@
 package com.roundlers.mytemplate.view.binders;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.roundlers.mytemplate.R;
 

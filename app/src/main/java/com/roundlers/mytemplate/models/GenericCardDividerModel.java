@@ -25,11 +25,11 @@ public class GenericCardDividerModel implements BaseModel {
         this.topMargin = topMargin;
     }
 
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
     public int getHeight() {
         return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
     }
 }

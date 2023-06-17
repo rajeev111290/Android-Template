@@ -1,17 +1,17 @@
 package com.roundlers.mytemplate.view.binders;
 
 import android.app.Activity;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.roundlers.mytemplate.R;
 import com.roundlers.mytemplate.base.DataBindAdapter;
 import com.roundlers.mytemplate.base.DataBinder;
 
 import java.util.List;
-
 
 
 /**
@@ -21,12 +21,8 @@ import java.util.List;
 public class EmptyDataBinder extends DataBinder<EmptyDataBinder.ViewHolder> {
 
 
-    private Activity context;
-
-
     public EmptyDataBinder(DataBindAdapter dataBindAdapter) {
         super(dataBindAdapter);
-        this.context = context;
     }
 
 
@@ -36,9 +32,9 @@ public class EmptyDataBinder extends DataBinder<EmptyDataBinder.ViewHolder> {
                 parent.getContext());
         View view = inflater.inflate(R.layout.single_line_layout, parent, false);
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-        layoutParams.height=1;
+        layoutParams.height = 1;
         view.setLayoutParams(layoutParams);
-        return new EmptyDataBinder.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
 
@@ -47,7 +43,7 @@ public class EmptyDataBinder extends DataBinder<EmptyDataBinder.ViewHolder> {
 
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         public ViewHolder(View itemView) {
             super(itemView);

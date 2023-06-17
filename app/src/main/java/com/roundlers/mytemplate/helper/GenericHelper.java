@@ -20,8 +20,7 @@ public class GenericHelper {
         File mypath = new File(directory, file + ".jpg");
 
 
-        if(mypath.exists())
-        {
+        if (mypath.exists()) {
             return directory.getAbsolutePath();
         }
         FileOutputStream fos = null;
